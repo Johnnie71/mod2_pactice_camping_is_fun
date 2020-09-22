@@ -1,0 +1,18 @@
+<h1> Sign up for Activity </h1>
+
+<%= form_for @signup do |f| %>
+    <%= f.label :camper %><br>
+    <%= f.collection_select :camper_id, Camper.all, :id, :name %><br>
+    <br>
+    <%= f.label :activity %><br>
+    <%= f.collection_select :activity_id, Activity.all, :id, :name %><br>
+    <br>
+    <%= f.label :time %><br>
+    <%= time_select :open_time, :prompt , :default => {:hour => '9', :minute => '30'} ,  html_options: {class: "form-control"} %>
+    <br>
+    <br>
+    <%= f.submit %>
+
+    
+
+<% end %>
